@@ -103,4 +103,4 @@ body.motion-paused .hero-actions,body.motion-paused .sculpture-stage{animation:n
 .hero-name>.name-eyebrow{font-size:clamp(1.5rem,2.6vw,2.7rem);letter-spacing:.32em;margin-bottom:.3em}
 .hero-name h1{flex-direction:row;align-items:baseline;gap:.2em;white-space:nowrap;font-size:clamp(4rem,8.2vw,9.8rem);line-height:.9}
 .hero-name h1>span:last-child{margin-top:0}
-@media(max-width:760px){.hero-name>.name-eyebrow{font-size:1.5rem}.hero-name h1{font-size:16vw}.sculpture-stage{top:275px}.hero-bottom-grid{margin-top:215px}}
+@media(max-width:760px){.hero-name>.name-eyebrow{font-size:1.5rem}.hero-name h1{font-size:16vw}.sculpture-stage{top:235px}.hero-bottom-grid{margin-top:215px}}
