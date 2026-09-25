@@ -51,11 +51,11 @@
 
       <article class="project project-paloom" id="paloom">
         <div class="project-overview">
-          <div class="project-heading"><span class="project-index">01</span><p class="eyebrow">INTERNSHIP / AI SAAS</p><span class="project-category">PRODUCT ENGINEERING</span></div>
+          <div class="project-heading"><span class="project-index">01</span><p class="eyebrow">INDUSTRY / AI SAAS</p><span class="project-category">PRODUCT ENGINEERING</span></div>
           <h3>Paloom<span class="title-period">.</span></h3>
           <p class="project-lead">A crowded inbox.<br>A more human reply.</p>
           <p class="project-description">One inbox for Instagram, Facebook, and YouTube. AI sorts comments and messages, then drafts replies in the creator’s own voice and language—with the owner reviewing every send.</p>
-          <div class="contribution-summary"><p class="eyebrow">MY ROLE / SOFTWARE ENGINEERING INTERN</p><ul><li>Built and evaluated the AI classification and reply pipeline.</li><li>Built an MCP server connecting ChatGPT to Paloom in three working days.</li><li>Improved tenant isolation, reliability, and mobile features.</li></ul></div>
+          <div class="contribution-summary"><p class="eyebrow"><span class="nowrap">MY ROLE / INTERN →</span> <span class="nowrap">FULL-TIME SOFTWARE DEVELOPER</span></p><ul><li>Built and evaluated the AI classification and reply pipeline.</li><li>Built an MCP server connecting ChatGPT to Paloom in three working days.</li><li>Improved tenant isolation, reliability, and mobile features.</li></ul></div>
           <div class="tags"><span>.NET / C#</span><span>TypeScript</span><span>React</span><span>Supabase</span><span>OpenRouter</span><span>MCP</span></div>
           <div class="metrics"><div><strong>93 → 98<small>/100</small></strong><span>Internal reply-quality score</span></div><div><strong>~55%<small> less</small></strong><span>AI cost per draft</span></div></div>
           <p class="metric-note">Results from project evaluation and cost measurements; not an external benchmark.</p>
@@ -76,7 +76,7 @@
         <details class="case-study">
           <summary><span>Inside the project</span><span class="summary-hint">CONTRIBUTIONS, DECISIONS & RESULTS</span><span class="expand-icon" aria-hidden="true">+</span></summary>
           <div class="case-body">
-            <div class="case-intro"><p class="eyebrow">MY CONTRIBUTION</p><h4>From the AI core <br>to production delivery.</h4><p>My work spanned AI infrastructure, the web and mobile apps, integrations, security fixes, and the Paloom rebrand. The product was previously called Talksy.</p></div>
+            <div class="case-intro"><p class="eyebrow">MY CONTRIBUTION</p><h4>From the AI core <br>to production delivery.</h4><p>I joined as a software engineering intern and continued on the product as a full-time software developer. My work spanned AI infrastructure, the web and mobile apps, integrations, security fixes, and the Paloom rebrand. The product was previously called Talksy.</p></div>
             <div class="case-grid">
               <section><span class="case-number">A / INTELLIGENCE</span><h5>Better replies, lower cost.</h5><p>I built persona generation and message classification, migrated the AI pipeline to TypeScript, and integrated OpenRouter with an admin model picker. An evaluation harness helped raise reply quality from 93 to 98 out of 100.</p><p>Routing simpler tasks to cheaper models reduced draft costs by about 55%. A free-model fallback kept a path available when paid credits ran out.</p></section>
               <section><span class="case-number">B / INTEGRATION</span><h5>ChatGPT, with boundaries.</h5><p>I built Paloom’s MCP (Model Context Protocol) server, letting owners connect ChatGPT to their account and review and send replies from a conversation. It shipped three working days after customer confirmation. A separate permissions table addressed limitations in the beta login service and made disconnects take effect immediately.</p><p>Database-level claims guarded against repeated sends. After a deployment hit a Postgres deadlock, I rolled back, fixed the issue, and redeployed that day.</p></section>
