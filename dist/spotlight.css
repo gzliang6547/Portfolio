@@ -99,8 +99,11 @@ body.motion-paused .hero-actions,body.motion-paused .sculpture-stage{animation:n
 @media(max-width:760px){.hero-name h1{font-size:clamp(5.7rem,25vw,8.2rem)}.sculpture-stage{top:220px;height:320px}.hero-bottom-grid{margin-top:112px}.hero-connect-link{padding:8px 12px;border:1px solid #c3acd633;border-radius:30px;background:#08090ec9}.hero-actions{gap:14px}}
 @media(max-width:360px){.hero-name h1{font-size:27vw}.sculpture-stage{top:225px;height:295px}.hero-bottom-grid{margin-top:110px}.hero-actions{gap:12px}.hero-connect-link{padding-inline:10px}}
 @media(max-width:760px){.hero-signature{width:max-content;max-width:100%;padding-right:18px;background:linear-gradient(90deg,#08090ee6 72%,transparent)}}
-.hero-name{max-width:none;top:17%}
-.hero-name>.name-eyebrow{font-size:clamp(1.5rem,2.6vw,2.7rem);letter-spacing:.32em;margin-bottom:.3em}
-.hero-name h1{flex-direction:row;align-items:baseline;gap:.2em;white-space:nowrap;font-size:clamp(4rem,8.2vw,9.8rem);line-height:.9}
-.hero-name h1>span:last-child{margin-top:0}
-@media(max-width:760px){.hero-name>.name-eyebrow{font-size:1.5rem}.hero-name h1{font-size:16vw}.sculpture-stage{top:235px}.hero-bottom-grid{margin-top:215px}}
+@media(min-width:761px){
+ .hero-name{max-width:none;top:17%}
+ .hero-name>.name-eyebrow{font-size:clamp(1.2rem,1.9vw,2rem);letter-spacing:.14em;margin:0 0 .45em .05em;color:#b9aec8}
+ .hero-name h1{flex-direction:row;align-items:baseline;gap:.2em;white-space:nowrap;font-size:clamp(4rem,8.2vw,9.8rem);line-height:.9}
+ .hero-name h1>span:first-child{letter-spacing:-.06em}
+ .hero-name h1>span:last-child{margin-top:0;font-size:1.08em;letter-spacing:-.02em}
+ .name-dot{font-size:.5em}
+}
