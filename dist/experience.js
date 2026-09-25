@@ -1,14 +1,29 @@
 'use strict';
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = reduce.matches;
+  let choice = null;
+  try { choice = localStorage.getItem('motion'); } catch (e) {}
+  let paused = choice ? choice === 'off' : reduce.matches;
+  const motionButton = document.querySelector('.motion-control');
   const applyPause = () => {
     document.body.classList.toggle('motion-paused', paused);
+    document.documentElement.classList.toggle('motion-on', !paused);
+    const icon = document.createElement('span');
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = paused ? '\u25B6\uFE0E' : '\u275A\u275A';
+    motionButton.replaceChildren(document.createTextNode(paused ? 'Play motion' : 'Pause motion'), icon);
   };
   applyPause();
-  reduce.addEventListener('change', () => { paused=reduce.matches; applyPause(); requestFrame(); });
+  motionButton.hidden = false;
+  motionButton.addEventListener('click', () => {
+    paused = !paused;
+    choice = paused ? 'off' : 'on';
+    try { localStorage.setItem('motion', choice); } catch (e) {}
+    applyPause(); requestFrame();
+  });
+  reduce.addEventListener('change', () => { if (choice) return; paused=reduce.matches; applyPause(); requestFrame(); });
 
-  if (!reduce.matches && 'IntersectionObserver' in window) {
+  if (!paused && 'IntersectionObserver' in window) {
     document.body.classList.add('js-motion');
     const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
@@ -28,8 +43,8 @@
   const onScroll=()=>{if(scrollPending)return;scrollPending=true;requestAnimationFrame(()=>{const range=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${range>0?scrollY/range:0})`;scrollPending=false;});};
   addEventListener('scroll',onScroll,{passive:true});onScroll();
   const aura=document.querySelector('.cursor-aura');
-  if(matchMedia('(pointer:fine)').matches&&!reduce.matches){
-    addEventListener('pointermove',e=>{aura.style.opacity='1';aura.style.transform=`translate(${e.clientX-aura.offsetWidth/2}px,${e.clientY-aura.offsetHeight/2}px)`;aura.classList.toggle('over',!!e.target.closest('a,button,summary'));},{passive:true});
+  if(matchMedia('(pointer:fine)').matches){
+    addEventListener('pointermove',e=>{if(paused)return;aura.style.opacity='1';aura.style.transform=`translate(${e.clientX-aura.offsetWidth/2}px,${e.clientY-aura.offsetHeight/2}px)`;aura.classList.toggle('over',!!e.target.closest('a,button,summary'));},{passive:true});
     document.addEventListener('pointerleave',()=>aura.style.opacity='0');
     document.querySelectorAll('.explore-circle,.contact-section .button').forEach(el=>{
       el.addEventListener('pointermove',e=>{if(paused)return;const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.14}px,${(e.clientY-r.top-r.height/2)*.14}px)`;});
@@ -65,7 +80,7 @@
   if(matchMedia('(pointer:fine)').matches){
     let lightFrame=0,lightX=70,lightY=42;
     hero.addEventListener('pointermove',e=>{
-      if(paused||reduce.matches)return;
+      if(paused)return;
       const bounds=hero.getBoundingClientRect();
       lightX=(e.clientX-bounds.left)/bounds.width*100;lightY=(e.clientY-bounds.top)/bounds.height*100;
       if(!lightFrame)lightFrame=requestAnimationFrame(()=>{hero.style.setProperty('--pointer-x',lightX+'%');hero.style.setProperty('--pointer-y',lightY+'%');lightFrame=0;});

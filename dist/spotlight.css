@@ -35,7 +35,9 @@
 .hero-bottom-grid{bottom:32px;left:8%;right:6%;grid-template-columns:1.1fr 1fr;gap:45px;padding-top:22px;border-top:1px solid #ab8ecc3d;align-items:center;z-index:4}
 .object-controls{min-width:0}
 .perspective-label{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#a79ab5;font:.75rem var(--mono);letter-spacing:.06em;margin-bottom:9px}
-.motion-control{margin:0;padding:5px 0;min-height:32px;color:#b9adc5;font-size:.75rem;white-space:nowrap}
+.motion-control{margin:0;padding:5px 0;min-height:32px;color:#b9adc5;font-size:.75rem;white-space:nowrap;background:none;border:0;transition:color .3s}
+.motion-control:hover{color:var(--scene-accent)}
+.motion-control span{margin-left:6px}
 .mode-buttons{border:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0}
 .mode-buttons button{display:flex;align-items:center;gap:12px;text-align:left;font:500 1.2rem var(--display);border:1px solid #a68cc432;border-radius:8px;min-height:66px;background:#15101cb3;color:#c0b4cc;padding:12px 15px;transition:background .35s,border-color .35s,color .35s,transform .3s}
 .mode-buttons small{font:.75rem var(--mono);opacity:.65}.mode-buttons button>span{margin-left:auto;font-size:1.1rem;opacity:.5}
@@ -82,7 +84,7 @@
  .section-heading h2{line-height:1.13}.section-heading h2 span{font-size:1.12em}.contact-section h2{line-height:1.13}
 }
 @media(max-width:360px){.hero-name h1{font-size:27vw}.hero-actions{gap:14px}.hero-actions a{font-size:.8125rem}.hero-work-link{padding-inline:13px}.sculpture-stage{top:225px;right:-32%;height:320px}.hero-bottom-grid{margin-top:135px}.mode-buttons button{gap:5px;padding:8px;font-size:.9375rem}.perspective-label>span{max-width:135px;line-height:1.5}.focus-evidence{min-height:159px}}
-@media(prefers-reduced-motion:reduce){.hero-name>p,.hero-name h1>span,.hero-signature,.hero-actions,.sculpture-stage{animation:none!important}.hero-grid{transform:none!important}}
+@media(prefers-reduced-motion:reduce){html:not(.motion-on) .hero-name>p,html:not(.motion-on) .hero-name h1>span,html:not(.motion-on) .hero-signature,html:not(.motion-on) .hero-actions,html:not(.motion-on) .sculpture-stage{animation:none!important}html:not(.motion-on) .hero-grid{transform:none!important}}
 body.motion-paused .hero-actions,body.motion-paused .sculpture-stage{animation:none!important;opacity:1;transform:none}
 @media print{.experience-hero{height:auto;min-height:0;background:white}.hero-name{position:static;max-width:none}.hero-name h1,.hero-name h1>span:last-child{font-size:42pt;color:black;-webkit-text-fill-color:black}.hero-name>.name-eyebrow{color:black}.hero-bottom-grid,.sculpture-stage,.hero-actions,.hero-kicker{display:none}.hero-signature{color:black}.project-overview:before{display:none}}
 @media(min-width:1201px){.hero-name h1{font-size:clamp(7rem,min(12.2vw,19vh),12.2rem)}}
