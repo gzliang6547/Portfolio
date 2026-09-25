@@ -23,4 +23,6 @@ The current contact destination is LinkedIn. GitHub links to the supplied profil
 
 Project contributions and metrics are based on the owner's supplied account. The Paloom scores are internal evaluations; the 44-to-94 voice-profile improvement concerns one test case. The healthcare platform is a university project using the Sepolia test network, and its symptom-analysis feature is not presented as clinically validated. No certificates, employers, institution names, dates, portraits, or project screenshots were invented.
 
-The Sites deployment begins private. It must be made public through the site's sharing controls before recruiters can access its hosted link.
+## Deployment
+
+The site is live at https://gzliang6547.github.io/My_Portfolio/. Every push to `main` redeploys the contents of `dist` through GitHub Pages (`.github/workflows/deploy-pages.yml`).
