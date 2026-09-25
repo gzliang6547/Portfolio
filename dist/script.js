@@ -3,7 +3,7 @@ const insights = {
   paloom: {
     inbox: ['01 / UNIFIED INBOX', 'Platform plugins feed a shared queue. Postgres row-level security separates tenants, while classification helps keep AI spend focused on messages worth answering.'],
     ai: ['02 / AI DECISION LAYER', 'TypeScript workers use OpenRouter to choose models for the task. Persona and language settings guide each draft; an evaluation harness measures quality alongside cost.'],
-    send: ['03 / HUMAN-REVIEWED SEND', 'Owners review and edit replies before sending from web, mobile, or ChatGPT. The MCP integration checks explicit permissions and uses a database-level claim to guard against repeated sends.']
+    send: ['03 / HUMAN-REVIEWED SEND', 'Owners review and edit replies before sending from web, mobile, or ChatGPT. The MCP server behind the ChatGPT connection checks explicit permissions and uses a database-level claim to guard against repeated sends.']
   },
   health: {
     encrypt: ['01 / ENCRYPT', 'Health records are AES-encrypted before storage. Sensitive clinical data stays off-chain; blockchain hashes provide an integrity check.'],
