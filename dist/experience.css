@@ -118,3 +118,4 @@ main{overflow:clip}.object-caption,.drag-hint{z-index:2}.object-caption{backgrou
 @media print{.hero-actions,.security-steps li:before{display:none}.security-story{display:block;color:black}.security-story h3 span,.security-story p,.security-steps h4{color:black}.security-story-heading{margin-bottom:20px}.hero-name h1{font-size:42pt}.experience-hero{min-height:0;display:block}.hero-bottom-grid{display:none}}
 @media(max-width:760px){.sculpture-stage{top:325px;height:240px}}
 @media(max-width:360px){.sculpture-stage{top:310px}}
+.project-company{margin-top:14px;font-size:.9375rem;line-height:1.7;color:#c8bad6}.project-company strong{color:#f3f2f7;font-weight:600}.project-company a{color:#ddc7f2;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}.project-company a:hover,.project-company a:focus-visible{color:#fff}.case-intro p a{color:inherit;text-decoration:underline;text-underline-offset:3px}
